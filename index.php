@@ -13,28 +13,31 @@
     <title></title>
 </head>
 <body>
-    <header>
-        <div id="logo-header">
-            <img src="./img/spotify-logo.png" alt="spotify logo">
-        </div>
-    </header>
+    <div id="app">
 
-    <main class="py-5">
-        <div class="container p-1">
-            <div class="row">
-            <?php foreach ($dischi as $disco) { ?>
-                <div class="col item-album">
-                    <img src="<?php echo $disco['poster'] ?>" class="img-fluid p-3" alt="<?php echo $disco['title'] ?>">
-                    <div class="text-album text-center">
-                        <h5 class="text-white"><?php echo $disco['title'] ?></h5>
-                        <p class="text-secondary"><?php echo $disco['author'] ?></p>
-                        <p class="text-secondary"><?php echo $disco['year'] ?></p>
+        <header>
+            <div id="logo-header">
+                <img src="./img/spotify-logo.png" alt="spotify logo">
+            </div>
+        </header>
+
+        <main class="py-5">
+            <div class="container p-1">
+                <div class="row">
+                    <div class="col item-album" v-for=" element in dischi">
+                        <img :src="element.poster" class="img-fluid p-3" :alt="element.author">
+                        <div class="text-album text-center">
+                            <h5 class="text-white">{{element.title}}</h5>
+                            <p class="text-secondary">{{element.author}}</p>
+                            <p class="text-secondary">{{element.year}}</p>
+                        </div>
                     </div>
                 </div>
-            <?php } ?>
             </div>
-        </div>
-    </main>
+        </main>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
