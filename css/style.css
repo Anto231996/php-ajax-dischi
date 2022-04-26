@@ -1,0 +1,21 @@
+header{
+    background-color: #2e3a46;
+}
+
+main{
+    background-color: #1e2d3b;
+}
+
+header div#logo-header{
+    padding: 20px;
+}
+
+header div#logo-header img{
+    width: 40px;
+}
+
+main div.col{
+    margin: 20px;
+    flex: 0 1 calc(20% - 40px);
+    background-color: #2e3a46;
+}
